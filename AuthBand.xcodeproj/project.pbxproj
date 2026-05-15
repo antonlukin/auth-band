@@ -1,0 +1,697 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1A1A1A1A1A1A1A1A1A1A1A01 /* AuthBandWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1A1A1A1A1A1A1A1A1A1A11 /* AuthBandWatchApp.swift */; };
+		1A1A1A1A1A1A1A1A1A1A1A02 /* WatchContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1A1A1A1A1A1A1A1A1A1A12 /* WatchContentView.swift */; };
+		1A1A1A1A1A1A1A1A1A1A1A03 /* OTPAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1A1A1A1A1A1A1A1A1A1A13 /* OTPAccount.swift */; };
+		1A1A1A1A1A1A1A1A1A1A1A04 /* TOTPGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1A1A1A1A1A1A1A1A1A1A14 /* TOTPGenerator.swift */; };
+		1A1A1A1A1A1A1A1A1A1A1A05 /* WatchAccountRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1A1A1A1A1A1A1A1A1A1A15 /* WatchAccountRow.swift */; };
+		1A1A1A1A1A1A1A1A1A1A1A06 /* AccountSyncStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1A1A1A1A1A1A1A1A1A1A16 /* AccountSyncStore.swift */; };
+		2B2B2B2B2B2B2B2B2B2B2B01 /* AuthBandApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2B2B2B2B2B2B2B2B2B2B11 /* AuthBandApp.swift */; };
+		2B2B2B2B2B2B2B2B2B2B2B02 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2B2B2B2B2B2B2B2B2B2B12 /* ContentView.swift */; };
+		2B2B2B2B2B2B2B2B2B2B2B03 /* OTPAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1A1A1A1A1A1A1A1A1A1A13 /* OTPAccount.swift */; };
+		2B2B2B2B2B2B2B2B2B2B2B04 /* TOTPGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1A1A1A1A1A1A1A1A1A1A14 /* TOTPGenerator.swift */; };
+		2B2B2B2B2B2B2B2B2B2B2B05 /* AccountSyncStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1A1A1A1A1A1A1A1A1A1A16 /* AccountSyncStore.swift */; };
+		2B2B2B2B2B2B2B2B2B2B2B06 /* AuthBandWatch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 1A1A1A1A1A1A1A1A1A1A1A10 /* AuthBandWatch.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2B2B2B2B2B2B2B2B2B2B2B07 /* ProtobufReader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2B2B2B2B2B2B2B2B2B2B13 /* ProtobufReader.swift */; };
+		2B2B2B2B2B2B2B2B2B2B2B08 /* OTPImport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2B2B2B2B2B2B2B2B2B2B14 /* OTPImport.swift */; };
+		2B2B2B2B2B2B2B2B2B2B2B09 /* CircularCountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2B2B2B2B2B2B2B2B2B2B15 /* CircularCountdownView.swift */; };
+		2B2B2B2B2B2B2B2B2B2B2B0A /* AccountRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2B2B2B2B2B2B2B2B2B2B16 /* AccountRow.swift */; };
+		2B2B2B2B2B2B2B2B2B2B2B0B /* EditAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2B2B2B2B2B2B2B2B2B2B17 /* EditAccountView.swift */; };
+		2B2B2B2B2B2B2B2B2B2B2B0C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2B2B2B2B2B2B2B2B2B2B18 /* SettingsView.swift */; };
+		2B2B2B2B2B2B2B2B2B2B2B0D /* QRCodeScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2B2B2B2B2B2B2B2B2B2B19 /* QRCodeScannerView.swift */; };
+		2B2B2B2B2B2B2B2B2B2B2B0E /* AddAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2B2B2B2B2B2B2B2B2B2B1A /* AddAccountView.swift */; };
+		3C3C3C3C3C3C3C3C3C3C3C01 /* TOTPGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3C3C3C3C3C3C3C3C3C3C11 /* TOTPGeneratorTests.swift */; };
+		3C3C3C3C3C3C3C3C3C3C3C02 /* OTPAuthURLParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3C3C3C3C3C3C3C3C3C3C12 /* OTPAuthURLParserTests.swift */; };
+		3C3C3C3C3C3C3C3C3C3C3C03 /* ProtobufReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3C3C3C3C3C3C3C3C3C3C13 /* ProtobufReaderTests.swift */; };
+		3C3C3C3C3C3C3C3C3C3C3C04 /* GoogleAuthenticatorMigrationParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3C3C3C3C3C3C3C3C3C3C14 /* GoogleAuthenticatorMigrationParserTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2B2B2B2B2B2B2B2B2B2B2B37 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A1A1A1A1A1A1A1A1A1A1A40 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1A1A1A1A1A1A1A1A1A1A1A30;
+			remoteInfo = AuthBandWatch;
+		};
+		3C3C3C3C3C3C3C3C3C3C3C37 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1A1A1A1A1A1A1A1A1A1A1A40 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2B2B2B2B2B2B2B2B2B2B2B30;
+			remoteInfo = AuthBand;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2B2B2B2B2B2B2B2B2B2B2B35 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				2B2B2B2B2B2B2B2B2B2B2B06 /* AuthBandWatch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1A1A1A1A1A1A1A1A1A1A1A10 /* AuthBandWatch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuthBandWatch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A1A1A1A1A1A1A1A1A1A1A11 /* AuthBandWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthBandWatchApp.swift; sourceTree = "<group>"; };
+		1A1A1A1A1A1A1A1A1A1A1A12 /* WatchContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchContentView.swift; sourceTree = "<group>"; };
+		1A1A1A1A1A1A1A1A1A1A1A13 /* OTPAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPAccount.swift; sourceTree = "<group>"; };
+		1A1A1A1A1A1A1A1A1A1A1A14 /* TOTPGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOTPGenerator.swift; sourceTree = "<group>"; };
+		1A1A1A1A1A1A1A1A1A1A1A15 /* WatchAccountRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchAccountRow.swift; sourceTree = "<group>"; };
+		1A1A1A1A1A1A1A1A1A1A1A16 /* AccountSyncStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSyncStore.swift; sourceTree = "<group>"; };
+		2B2B2B2B2B2B2B2B2B2B2B10 /* AuthBand.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AuthBand.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B2B2B2B2B2B2B2B2B2B2B11 /* AuthBandApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthBandApp.swift; sourceTree = "<group>"; };
+		2B2B2B2B2B2B2B2B2B2B2B12 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		2B2B2B2B2B2B2B2B2B2B2B13 /* ProtobufReader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtobufReader.swift; sourceTree = "<group>"; };
+		2B2B2B2B2B2B2B2B2B2B2B14 /* OTPImport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPImport.swift; sourceTree = "<group>"; };
+		2B2B2B2B2B2B2B2B2B2B2B15 /* CircularCountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularCountdownView.swift; sourceTree = "<group>"; };
+		2B2B2B2B2B2B2B2B2B2B2B16 /* AccountRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountRow.swift; sourceTree = "<group>"; };
+		2B2B2B2B2B2B2B2B2B2B2B17 /* EditAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountView.swift; sourceTree = "<group>"; };
+		2B2B2B2B2B2B2B2B2B2B2B18 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		2B2B2B2B2B2B2B2B2B2B2B19 /* QRCodeScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeScannerView.swift; sourceTree = "<group>"; };
+		2B2B2B2B2B2B2B2B2B2B2B1A /* AddAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountView.swift; sourceTree = "<group>"; };
+		3C3C3C3C3C3C3C3C3C3C3C10 /* AuthBandTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AuthBandTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C3C3C3C3C3C3C3C3C3C3C11 /* TOTPGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOTPGeneratorTests.swift; sourceTree = "<group>"; };
+		3C3C3C3C3C3C3C3C3C3C3C12 /* OTPAuthURLParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPAuthURLParserTests.swift; sourceTree = "<group>"; };
+		3C3C3C3C3C3C3C3C3C3C3C13 /* ProtobufReaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtobufReaderTests.swift; sourceTree = "<group>"; };
+		3C3C3C3C3C3C3C3C3C3C3C14 /* GoogleAuthenticatorMigrationParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthenticatorMigrationParserTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1A1A1A1A1A1A1A1A1A1A1A33 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2B2B2B2B2B2B2B2B2B2B2B33 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C3C3C3C3C3C3C3C3C3C3C33 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1A1A1A1A1A1A1A1A1A1A1A20 = {
+			isa = PBXGroup;
+			children = (
+				1A1A1A1A1A1A1A1A1A1A1A21 /* AuthBandWatch */,
+				2B2B2B2B2B2B2B2B2B2B2B21 /* AuthBand */,
+				3C3C3C3C3C3C3C3C3C3C3C21 /* AuthBandTests */,
+				1A1A1A1A1A1A1A1A1A1A1A22 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1A1A1A1A1A1A1A1A1A1A1A21 /* AuthBandWatch */ = {
+			isa = PBXGroup;
+			children = (
+				1A1A1A1A1A1A1A1A1A1A1A11 /* AuthBandWatchApp.swift */,
+				1A1A1A1A1A1A1A1A1A1A1A12 /* WatchContentView.swift */,
+				1A1A1A1A1A1A1A1A1A1A1A15 /* WatchAccountRow.swift */,
+				1A1A1A1A1A1A1A1A1A1A1A13 /* OTPAccount.swift */,
+				1A1A1A1A1A1A1A1A1A1A1A14 /* TOTPGenerator.swift */,
+				1A1A1A1A1A1A1A1A1A1A1A16 /* AccountSyncStore.swift */,
+			);
+			path = AuthBandWatch;
+			sourceTree = "<group>";
+		};
+		1A1A1A1A1A1A1A1A1A1A1A22 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1A1A1A1A1A1A1A1A1A1A1A10 /* AuthBandWatch.app */,
+				2B2B2B2B2B2B2B2B2B2B2B10 /* AuthBand.app */,
+				3C3C3C3C3C3C3C3C3C3C3C10 /* AuthBandTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3C3C3C3C3C3C3C3C3C3C3C21 /* AuthBandTests */ = {
+			isa = PBXGroup;
+			children = (
+				3C3C3C3C3C3C3C3C3C3C3C11 /* TOTPGeneratorTests.swift */,
+				3C3C3C3C3C3C3C3C3C3C3C12 /* OTPAuthURLParserTests.swift */,
+				3C3C3C3C3C3C3C3C3C3C3C13 /* ProtobufReaderTests.swift */,
+				3C3C3C3C3C3C3C3C3C3C3C14 /* GoogleAuthenticatorMigrationParserTests.swift */,
+			);
+			path = AuthBandTests;
+			sourceTree = "<group>";
+		};
+		2B2B2B2B2B2B2B2B2B2B2B21 /* AuthBand */ = {
+			isa = PBXGroup;
+			children = (
+				2B2B2B2B2B2B2B2B2B2B2B11 /* AuthBandApp.swift */,
+				2B2B2B2B2B2B2B2B2B2B2B12 /* ContentView.swift */,
+				2B2B2B2B2B2B2B2B2B2B2B13 /* ProtobufReader.swift */,
+				2B2B2B2B2B2B2B2B2B2B2B14 /* OTPImport.swift */,
+				2B2B2B2B2B2B2B2B2B2B2B15 /* CircularCountdownView.swift */,
+				2B2B2B2B2B2B2B2B2B2B2B16 /* AccountRow.swift */,
+				2B2B2B2B2B2B2B2B2B2B2B17 /* EditAccountView.swift */,
+				2B2B2B2B2B2B2B2B2B2B2B18 /* SettingsView.swift */,
+				2B2B2B2B2B2B2B2B2B2B2B19 /* QRCodeScannerView.swift */,
+				2B2B2B2B2B2B2B2B2B2B2B1A /* AddAccountView.swift */,
+			);
+			path = AuthBand;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1A1A1A1A1A1A1A1A1A1A1A30 /* AuthBandWatch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1A1A1A1A1A1A1A1A1A1A1A31 /* Build configuration list for PBXNativeTarget "AuthBandWatch" */;
+			buildPhases = (
+				1A1A1A1A1A1A1A1A1A1A1A32 /* Sources */,
+				1A1A1A1A1A1A1A1A1A1A1A33 /* Frameworks */,
+				1A1A1A1A1A1A1A1A1A1A1A34 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AuthBandWatch;
+			productName = AuthBandWatch;
+			productReference = 1A1A1A1A1A1A1A1A1A1A1A10 /* AuthBandWatch.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2B2B2B2B2B2B2B2B2B2B2B30 /* AuthBand */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2B2B2B2B2B2B2B2B2B2B2B31 /* Build configuration list for PBXNativeTarget "AuthBand" */;
+			buildPhases = (
+				2B2B2B2B2B2B2B2B2B2B2B32 /* Sources */,
+				2B2B2B2B2B2B2B2B2B2B2B33 /* Frameworks */,
+				2B2B2B2B2B2B2B2B2B2B2B34 /* Resources */,
+				2B2B2B2B2B2B2B2B2B2B2B35 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2B2B2B2B2B2B2B2B2B2B2B36 /* PBXTargetDependency */,
+			);
+			name = AuthBand;
+			productName = AuthBand;
+			productReference = 2B2B2B2B2B2B2B2B2B2B2B10 /* AuthBand.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3C3C3C3C3C3C3C3C3C3C3C30 /* AuthBandTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3C3C3C3C3C3C3C3C3C3C3C31 /* Build configuration list for PBXNativeTarget "AuthBandTests" */;
+			buildPhases = (
+				3C3C3C3C3C3C3C3C3C3C3C32 /* Sources */,
+				3C3C3C3C3C3C3C3C3C3C3C33 /* Frameworks */,
+				3C3C3C3C3C3C3C3C3C3C3C34 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3C3C3C3C3C3C3C3C3C3C3C36 /* PBXTargetDependency */,
+			);
+			name = AuthBandTests;
+			productName = AuthBandTests;
+			productReference = 3C3C3C3C3C3C3C3C3C3C3C10 /* AuthBandTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1A1A1A1A1A1A1A1A1A1A1A40 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2620;
+				LastUpgradeCheck = 2620;
+				TargetAttributes = {
+					1A1A1A1A1A1A1A1A1A1A1A30 = {
+						CreatedOnToolsVersion = 26.2;
+					};
+					2B2B2B2B2B2B2B2B2B2B2B30 = {
+						CreatedOnToolsVersion = 26.2;
+					};
+					3C3C3C3C3C3C3C3C3C3C3C30 = {
+						CreatedOnToolsVersion = 26.2;
+						TestTargetID = 2B2B2B2B2B2B2B2B2B2B2B30;
+					};
+				};
+			};
+			buildConfigurationList = 1A1A1A1A1A1A1A1A1A1A1A41 /* Build configuration list for PBXProject "AuthBand" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1A1A1A1A1A1A1A1A1A1A1A20;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 1A1A1A1A1A1A1A1A1A1A1A22 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1A1A1A1A1A1A1A1A1A1A1A30 /* AuthBandWatch */,
+				2B2B2B2B2B2B2B2B2B2B2B30 /* AuthBand */,
+				3C3C3C3C3C3C3C3C3C3C3C30 /* AuthBandTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1A1A1A1A1A1A1A1A1A1A1A34 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2B2B2B2B2B2B2B2B2B2B2B34 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C3C3C3C3C3C3C3C3C3C3C34 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1A1A1A1A1A1A1A1A1A1A1A32 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1A1A1A1A1A1A1A1A1A1A1A01 /* AuthBandWatchApp.swift in Sources */,
+				1A1A1A1A1A1A1A1A1A1A1A02 /* WatchContentView.swift in Sources */,
+				1A1A1A1A1A1A1A1A1A1A1A05 /* WatchAccountRow.swift in Sources */,
+				1A1A1A1A1A1A1A1A1A1A1A03 /* OTPAccount.swift in Sources */,
+				1A1A1A1A1A1A1A1A1A1A1A04 /* TOTPGenerator.swift in Sources */,
+				1A1A1A1A1A1A1A1A1A1A1A06 /* AccountSyncStore.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2B2B2B2B2B2B2B2B2B2B2B32 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B2B2B2B2B2B2B2B2B2B2B01 /* AuthBandApp.swift in Sources */,
+				2B2B2B2B2B2B2B2B2B2B2B02 /* ContentView.swift in Sources */,
+				2B2B2B2B2B2B2B2B2B2B2B03 /* OTPAccount.swift in Sources */,
+				2B2B2B2B2B2B2B2B2B2B2B04 /* TOTPGenerator.swift in Sources */,
+				2B2B2B2B2B2B2B2B2B2B2B05 /* AccountSyncStore.swift in Sources */,
+				2B2B2B2B2B2B2B2B2B2B2B07 /* ProtobufReader.swift in Sources */,
+				2B2B2B2B2B2B2B2B2B2B2B08 /* OTPImport.swift in Sources */,
+				2B2B2B2B2B2B2B2B2B2B2B09 /* CircularCountdownView.swift in Sources */,
+				2B2B2B2B2B2B2B2B2B2B2B0A /* AccountRow.swift in Sources */,
+				2B2B2B2B2B2B2B2B2B2B2B0B /* EditAccountView.swift in Sources */,
+				2B2B2B2B2B2B2B2B2B2B2B0C /* SettingsView.swift in Sources */,
+				2B2B2B2B2B2B2B2B2B2B2B0D /* QRCodeScannerView.swift in Sources */,
+				2B2B2B2B2B2B2B2B2B2B2B0E /* AddAccountView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C3C3C3C3C3C3C3C3C3C3C32 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C3C3C3C3C3C3C3C3C3C3C01 /* TOTPGeneratorTests.swift in Sources */,
+				3C3C3C3C3C3C3C3C3C3C3C02 /* OTPAuthURLParserTests.swift in Sources */,
+				3C3C3C3C3C3C3C3C3C3C3C03 /* ProtobufReaderTests.swift in Sources */,
+				3C3C3C3C3C3C3C3C3C3C3C04 /* GoogleAuthenticatorMigrationParserTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2B2B2B2B2B2B2B2B2B2B2B36 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1A1A1A1A1A1A1A1A1A1A1A30 /* AuthBandWatch */;
+			targetProxy = 2B2B2B2B2B2B2B2B2B2B2B37 /* PBXContainerItemProxy */;
+		};
+		3C3C3C3C3C3C3C3C3C3C3C36 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2B2B2B2B2B2B2B2B2B2B2B30 /* AuthBand */;
+			targetProxy = 3C3C3C3C3C3C3C3C3C3C3C37 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1A1A1A1A1A1A1A1A1A1A1A50 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = watchos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Debug;
+		};
+		1A1A1A1A1A1A1A1A1A1A1A51 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = watchos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 11.0;
+			};
+			name = Release;
+		};
+		1A1A1A1A1A1A1A1A1A1A1A60 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MHSF6FKTKG;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = AuthBand;
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.antonlukin.authband;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKApplication = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.antonlukin.authband.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchos watchsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.6;
+			};
+			name = Debug;
+		};
+		1A1A1A1A1A1A1A1A1A1A1A61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MHSF6FKTKG;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = AuthBand;
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.antonlukin.authband;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKApplication = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.antonlukin.authband.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "watchos watchsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.6;
+			};
+			name = Release;
+		};
+		2B2B2B2B2B2B2B2B2B2B2B60 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MHSF6FKTKG;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = AuthBand;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Scan authenticator QR codes.";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Unlock AuthBand with Face ID.";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.antonlukin.authband;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		2B2B2B2B2B2B2B2B2B2B2B61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MHSF6FKTKG;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = AuthBand;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Scan authenticator QR codes.";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Unlock AuthBand with Face ID.";
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.antonlukin.authband;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		3C3C3C3C3C3C3C3C3C3C3C60 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MHSF6FKTKG;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.antonlukin.authband.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AuthBand.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AuthBand";
+			};
+			name = Debug;
+		};
+		3C3C3C3C3C3C3C3C3C3C3C61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = MHSF6FKTKG;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.antonlukin.authband.tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AuthBand.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/AuthBand";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1A1A1A1A1A1A1A1A1A1A1A31 /* Build configuration list for PBXNativeTarget "AuthBandWatch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A1A1A1A1A1A1A1A1A1A1A60 /* Debug */,
+				1A1A1A1A1A1A1A1A1A1A1A61 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1A1A1A1A1A1A1A1A1A1A1A41 /* Build configuration list for PBXProject "AuthBand" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1A1A1A1A1A1A1A1A1A1A1A50 /* Debug */,
+				1A1A1A1A1A1A1A1A1A1A1A51 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2B2B2B2B2B2B2B2B2B2B2B31 /* Build configuration list for PBXNativeTarget "AuthBand" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B2B2B2B2B2B2B2B2B2B2B60 /* Debug */,
+				2B2B2B2B2B2B2B2B2B2B2B61 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3C3C3C3C3C3C3C3C3C3C3C31 /* Build configuration list for PBXNativeTarget "AuthBandTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C3C3C3C3C3C3C3C3C3C3C60 /* Debug */,
+				3C3C3C3C3C3C3C3C3C3C3C61 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1A1A1A1A1A1A1A1A1A1A1A40 /* Project object */;
+}

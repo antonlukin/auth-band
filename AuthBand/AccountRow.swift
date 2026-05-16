@@ -77,7 +77,8 @@ struct AccountRow: View {
 
     private func copy(_ code: String) {
         let elapsed = date.timeIntervalSince1970.truncatingRemainder(dividingBy: account.period)
-        let expiresAt = date.addingTimeInterval(account.period - elapsed)
+        let timeUntilWindowEnd = account.period - elapsed
+        let expiresAt = date.addingTimeInterval(min(timeUntilWindowEnd, 30))
 
         UIPasteboard.general.setItems(
             [[UTType.utf8PlainText.identifier: code]],

@@ -1,3 +1,4 @@
+import PhotosUI
 import SwiftUI
 
 struct AddAccountView: View {
@@ -13,6 +14,7 @@ struct AddAccountView: View {
     @State private var digits = 6
     @State private var period: TimeInterval = 30
     @State private var isScanningQRCode = false
+    @State private var selectedPhotos: [PhotosPickerItem] = []
     @State private var scanError: String?
 
     private enum Field {
@@ -49,6 +51,13 @@ struct AddAccountView: View {
                         isScanningQRCode = true
                     } label: {
                         Label("Scan QR Code", systemImage: "qrcode.viewfinder")
+                    }
+
+                    PhotosPicker(
+                        selection: $selectedPhotos,
+                        matching: .images
+                    ) {
+                        Label("Import from Photos", systemImage: "photo.on.rectangle.angled")
                     }
                 } footer: {
                     if let scanError {
@@ -119,6 +128,10 @@ struct AddAccountView: View {
                     .disabled(!canSave)
                 }
             }
+            .onChange(of: selectedPhotos) { _, newItems in
+                guard !newItems.isEmpty else { return }
+                Task { await handlePickedPhotos(newItems) }
+            }
             .fullScreenCover(isPresented: $isScanningQRCode) {
                 NavigationStack {
                     QRCodeScannerView { scannedCode in
@@ -183,4 +196,59 @@ struct AddAccountView: View {
         digits = account.digits
         period = account.period
     }
+
+    private func handlePickedPhotos(_ items: [PhotosPickerItem]) async {
+        defer { selectedPhotos = [] }
+
+        var allCodes: [String] = []
+        var imagesLoaded = 0
+        for item in items {
+            guard let data = try? await item.loadTransferable(type: Data.self),
+                  let image = UIImage(data: data)
+            else {
+                continue
+            }
+            imagesLoaded += 1
+            allCodes.append(contentsOf: QRImageDecoder.decode(image))
+        }
+
+        guard imagesLoaded > 0 else {
+            scanError = "Could not load the selected images"
+            return
+        }
+
+        guard !allCodes.isEmpty else {
+            scanError = items.count == 1
+                ? "No QR code found in the selected image"
+                : "No QR codes found in the selected images"
+            return
+        }
+
+        var accounts: [OTPAccount] = []
+        var lastError: Error?
+        for code in allCodes {
+            do {
+                switch try OTPQRCodeParser.parse(code) {
+                case .singleAccount(let account):
+                    accounts.append(account)
+                case .accountBundle(let bundleAccounts):
+                    accounts.append(contentsOf: bundleAccounts)
+                }
+            } catch {
+                lastError = error
+            }
+        }
+
+        guard !accounts.isEmpty else {
+            scanError = lastError?.localizedDescription
+                ?? "No TOTP authenticator codes found in the selected images"
+            return
+        }
+
+        scanError = nil
+        let summary = store.importAccounts(accounts)
+        onImport(summary)
+        dismiss()
+    }
+
 }

@@ -12,6 +12,15 @@ enum SyncStatus: Equatable {
     case failed(String)
 }
 
+private struct SyncEnvelope: Codable {
+    let version: Int
+    let sentAt: Date
+    let accounts: [OTPAccount]
+
+    static let currentVersion = 1
+    static let maxAccounts = 200
+}
+
 @MainActor
 final class AccountSyncStore: NSObject, ObservableObject {
     @Published private(set) var accounts: [OTPAccount]
@@ -54,7 +63,12 @@ final class AccountSyncStore: NSObject, ObservableObject {
         }
 
         do {
-            let payload = try encoder.encode(accounts)
+            let envelope = SyncEnvelope(
+                version: SyncEnvelope.currentVersion,
+                sentAt: Date(),
+                accounts: accounts
+            )
+            let payload = try encoder.encode(envelope)
             let message = [accountsKey: payload]
             try session.updateApplicationContext(message)
 
@@ -100,6 +114,10 @@ final class AccountSyncStore: NSObject, ObservableObject {
         let secret = TOTPGenerator.normalizedSecret(account.secret)
 
         guard !issuer.isEmpty, TOTPGenerator.isValidSecret(secret) else {
+            return
+        }
+
+        guard !accounts.contains(where: { $0.secret == secret }) else {
             return
         }
 
@@ -232,14 +250,28 @@ final class AccountSyncStore: NSObject, ObservableObject {
             return
         }
 
+        let envelope: SyncEnvelope
         do {
-            accounts = try decoder.decode([OTPAccount].self, from: payload)
-            saveAccounts()
-            syncStatus = .ready
-            lastSyncedAt = Date()
+            envelope = try decoder.decode(SyncEnvelope.self, from: payload)
         } catch {
             syncStatus = .failed("Received invalid accounts")
+            return
         }
+
+        guard envelope.version == SyncEnvelope.currentVersion else {
+            syncStatus = .failed("Unsupported sync version \(envelope.version)")
+            return
+        }
+
+        guard envelope.accounts.count <= SyncEnvelope.maxAccounts else {
+            syncStatus = .failed("Sync payload too large (\(envelope.accounts.count) accounts)")
+            return
+        }
+
+        accounts = envelope.accounts
+        saveAccounts()
+        syncStatus = .ready
+        lastSyncedAt = Date()
     }
 
     private static func loadStoredAccounts() -> [OTPAccount]? {
@@ -254,10 +286,14 @@ final class AccountSyncStore: NSObject, ObservableObject {
             return nil
         }
 
-        if KeychainAccountStorage.save(legacyPayload) {
-            UserDefaults.standard.removeObject(forKey: legacyStorageKey)
+        // Fail-closed: if migration to Keychain fails, do not expose legacy data
+        // to the running app. The legacy UserDefaults entry stays in place so a
+        // subsequent launch can retry the migration.
+        guard KeychainAccountStorage.save(legacyPayload) else {
+            return nil
         }
 
+        UserDefaults.standard.removeObject(forKey: legacyStorageKey)
         return legacyAccounts
     }
 
@@ -370,7 +406,7 @@ private enum KeychainAccountStorage {
         }
 
         var newItem = query
-        newItem[kSecAttrAccessible as String] = kSecAttrAccessibleWhenUnlockedThisDeviceOnly
+        newItem[kSecAttrAccessible as String] = kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly
         newItem[kSecValueData as String] = data
 
         return SecItemAdd(newItem as CFDictionary, nil) == errSecSuccess

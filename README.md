@@ -34,6 +34,8 @@ The whole point of an authenticator is custody of secrets, so this matters.
 
 **Audited.** A full third-party security audit was conducted in May 2026 covering Keychain configuration, authentication, untrusted-input parsing, IPC, clipboard, cryptography, and shipping hygiene. The findings were reviewed; P1/P2 issues are fixed in the repository (see git history). The audit report itself isn't redistributed but the code changes that addressed it are open.
 
+**AI-assisted review.** The codebase has also been reviewed with ChatGPT 5.5, including Deep Research, and Claude Opus 4.7.
+
 ## Build
 
 1. Open `AuthBand.xcodeproj` in Xcode 17 or later.

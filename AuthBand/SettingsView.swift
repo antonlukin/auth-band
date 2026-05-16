@@ -41,6 +41,26 @@ struct SettingsView: View {
             } footer: {
                 Text("Remove every account from this iPhone and from your Apple Watch")
             }
+
+            Section {
+                Link(destination: Self.sourceURL) {
+                    HStack {
+                        Text("Source Code")
+                        Spacer()
+                        Image(systemName: "arrow.up.forward.square")
+                            .foregroundStyle(.secondary)
+                    }
+                }
+            } header: {
+                Text("About")
+            } footer: {
+                VStack(alignment: .leading, spacing: 6) {
+                    Text("AuthBand is open source — the code is public on GitHub, so you can inspect what runs on your device, audit it, or build it yourself.")
+                    Text("Version \(Self.appVersion)")
+                        .font(.caption2)
+                        .foregroundStyle(.secondary)
+                }
+            }
         }
         .navigationTitle("Settings")
         .navigationBarTitleDisplayMode(.inline)
@@ -63,5 +83,11 @@ struct SettingsView: View {
         } message: {
             Text("This removes every account from this iPhone and Apple Watch — cannot be undone")
         }
+    }
+
+    private static let sourceURL = URL(string: "https://github.com/antonlukin/auth-band")!
+
+    private static var appVersion: String {
+        Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "—"
     }
 }

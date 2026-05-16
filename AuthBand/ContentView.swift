@@ -132,7 +132,12 @@ struct ContentView: View {
         ContentUnavailableView {
             Label("No Accounts", systemImage: "key.fill")
         } description: {
-            Text("Add your first authentication code by scanning a QR code or entering it manually")
+            VStack(spacing: 12) {
+                Text("Add your first authentication code by scanning a QR code or entering it manually")
+                Text("AuthBand does not back up secrets — save the recovery codes each service gives you")
+                    .font(.footnote)
+                    .foregroundStyle(.secondary)
+            }
         } actions: {
             Button {
                 isAddingAccount = true

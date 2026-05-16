@@ -60,6 +60,22 @@ struct SettingsView: View {
             }
 
             Section {
+                Link(destination: Self.privacyURL) {
+                    HStack {
+                        Text("Privacy Policy")
+                        Spacer()
+                        Image(systemName: "arrow.up.forward.square")
+                            .foregroundStyle(.secondary)
+                    }
+                }
+                Link(destination: Self.supportURL) {
+                    HStack {
+                        Text("Support")
+                        Spacer()
+                        Image(systemName: "arrow.up.forward.square")
+                            .foregroundStyle(.secondary)
+                    }
+                }
                 Link(destination: Self.sourceURL) {
                     HStack {
                         Text("Source Code")
@@ -145,6 +161,8 @@ struct SettingsView: View {
     }
 
     private static let sourceURL = URL(string: "https://github.com/antonlukin/auth-band")!
+    private static let privacyURL = URL(string: "https://github.com/antonlukin/auth-band/blob/main/PRIVACY.md")!
+    private static let supportURL = URL(string: "https://github.com/antonlukin/auth-band/issues")!
 
     private static var appVersion: String {
         Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "—"

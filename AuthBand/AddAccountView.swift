@@ -60,9 +60,12 @@ struct AddAccountView: View {
                         Label("Import from Photos", systemImage: "photo.on.rectangle.angled")
                     }
                 } footer: {
-                    if let scanError {
-                        Text(scanError)
-                            .foregroundStyle(.red)
+                    VStack(alignment: .leading, spacing: 6) {
+                        if let scanError {
+                            Text(scanError)
+                                .foregroundStyle(.red)
+                        }
+                        Text("AuthBand does not back up secrets — save the recovery codes each service gives you.")
                     }
                 }
 

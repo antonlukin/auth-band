@@ -132,12 +132,7 @@ struct ContentView: View {
         ContentUnavailableView {
             Label("No Accounts", systemImage: "key.fill")
         } description: {
-            VStack(spacing: 12) {
-                Text("Add your first authentication code by scanning a QR code or entering it manually")
-                Text("AuthBand does not back up secrets — save the recovery codes each service gives you")
-                    .font(.footnote)
-                    .foregroundStyle(.secondary)
-            }
+            Text("Add your first authentication code by scanning a QR code or entering it manually")
         } actions: {
             Button {
                 isAddingAccount = true
@@ -253,6 +248,12 @@ struct ContentView: View {
     private func showToast(_ message: String) {
         toastTask?.cancel()
         toastMessage = message
+        Task { @MainActor in
+            try? await Task.sleep(nanoseconds: 100_000_000)
+            var announcement = AttributedString(message)
+            announcement.accessibilitySpeechAnnouncementPriority = .high
+            AccessibilityNotification.Announcement(announcement).post()
+        }
         toastTask = Task { @MainActor in
             try? await Task.sleep(nanoseconds: 1_500_000_000)
             guard !Task.isCancelled else {

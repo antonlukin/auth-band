@@ -5,12 +5,14 @@ struct SettingsView: View {
     @ObservedObject var appLock: AppLockManager
     let store: AccountSyncStore
     @AppStorage(AppLockManager.requireLockKey) private var requireBiometricLock = true
+    @AppStorage("hideCodes") private var hideCodes = false
     @State private var showDeleteAllConfirm = false
 
     var body: some View {
         Form {
             Section {
                 Toggle("Require Device Unlock", isOn: $requireBiometricLock)
+                Toggle("Hide Codes", isOn: $hideCodes)
             } header: {
                 Text("Security")
             } footer: {
@@ -38,7 +40,7 @@ struct SettingsView: View {
                         Spacer()
                         Text(issue)
                             .multilineTextAlignment(.trailing)
-                            .foregroundStyle(.red)
+                            .foregroundStyle(.secondary)
                     }
                 }
             } header: {

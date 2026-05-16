@@ -12,6 +12,7 @@ struct WatchContentView: View {
                     } description: {
                         Text("Add accounts on your iPhone")
                     }
+                    .padding(.top)
                 } else {
                     TimelineView(.periodic(from: .now, by: 1)) { timeline in
                         List(store.accounts) { account in

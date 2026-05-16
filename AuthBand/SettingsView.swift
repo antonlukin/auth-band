@@ -22,7 +22,6 @@ struct SettingsView: View {
             Section {
                 Button {
                     store.sendAccountsToWatch()
-                    dismiss()
                 } label: {
                     Text("Sync to Apple Watch")
                 }

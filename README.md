@@ -59,4 +59,4 @@ Proof of concept. Working and tested across iPhone SE through 17 Pro Max and App
 
 ## License
 
-See LICENSE file (TBD).
+MIT — see [LICENSE](LICENSE).

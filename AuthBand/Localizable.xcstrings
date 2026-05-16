@@ -1,34 +1,37 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "%lld" : {
-
-    },
-    "%lld accounts • %@" : {
-      "comment" : "Footer combining account count and sync status; configure plural variants on `count`",
+    "%@ • %@" : {
+      "comment" : "Footer combining account count and a sync issue",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "%1$lld accounts • %2$@"
+            "value" : "%1$@ • %2$@"
           }
         }
       }
     },
+    "%lld" : {
+
+    },
+    "%lld accounts" : {
+      "comment" : "Footer: how many accounts are saved; configure plural variants on `count`"
+    },
     "%lld couldn't be imported" : {
       "comment" : "Import summary: number of invalid entries skipped; configure plural on `invalid`"
     },
+    "%lld d ago" : {
+      "comment" : "Relative time: in days; configure plural on `days`"
+    },
+    "%lld h ago" : {
+      "comment" : "Relative time: in hours; configure plural on `hours`"
+    },
+    "%lld min ago" : {
+      "comment" : "Relative time: in minutes; configure plural on `minutes`"
+    },
     "%lld were already saved" : {
       "comment" : "Import summary: number of duplicates skipped; configure plural on `dupes`"
-    },
-    "%lldd ago" : {
-      "comment" : "Relative time, abbreviated days"
-    },
-    "%lldh ago" : {
-      "comment" : "Relative time, abbreviated hours"
-    },
-    "%lldm ago" : {
-      "comment" : "Relative time, abbreviated minutes"
     },
     "About" : {
 
@@ -58,12 +61,15 @@
 
     },
     "Apple Watch not available" : {
-      "comment" : "Footer status: WatchConnectivity unsupported on this device"
+      "comment" : "Footer status: WatchConnectivity unsupported on this device\nSettings: WatchConnectivity unsupported on this device"
     },
     "Apple Watch sync failed" : {
-      "comment" : "Footer status: any failure"
+      "comment" : "Footer status: any sync failure"
     },
     "AuthBand" : {
+
+    },
+    "AuthBand does not back up secrets — save the recovery codes each service gives you." : {
 
     },
     "AuthBand is locked" : {
@@ -90,7 +96,13 @@
     "Code copied" : {
       "comment" : "Toast shown after tapping a row to copy its TOTP code"
     },
+    "Code hidden" : {
+      "comment" : "VoiceOver: code masked because Hide Codes is on"
+    },
     "Codes refresh in %lld seconds" : {
+
+    },
+    "Copy code" : {
 
     },
     "Could not load the selected images" : {
@@ -129,6 +141,9 @@
     "Google Authenticator QR code does not contain migration data" : {
       "comment" : "Import error: otpauth-migration URL missing data param"
     },
+    "Hide Codes" : {
+
+    },
     "Import complete" : {
 
     },
@@ -145,13 +160,22 @@
 
     },
     "just now" : {
-      "comment" : "Relative time: under a minute ago"
+      "comment" : "Relative time: very recent (under 10 seconds)"
+    },
+    "Last synced" : {
+
+    },
+    "less than a minute ago" : {
+      "comment" : "Relative time: between 10 and 60 seconds"
     },
     "Live sync failed: %@" : {
       "comment" : "Shown when WatchConnectivity sendMessage errors out"
     },
     "Local secure storage failed" : {
       "comment" : "Sync error: Keychain write returned an error"
+    },
+    "Never" : {
+      "comment" : "Settings: Apple Watch never synced before"
     },
     "No Accounts" : {
 
@@ -160,7 +184,7 @@
 
     },
     "No paired Apple Watch" : {
-      "comment" : "Footer status: no Apple Watch paired with this iPhone"
+      "comment" : "Footer status: no Apple Watch paired with this iPhone\nSettings: no Apple Watch paired with this iPhone"
     },
     "No QR code found in the selected image" : {
       "comment" : "Photo import: single image, no QR"
@@ -174,9 +198,6 @@
     "No TOTP authenticator codes found in the selected images" : {
       "comment" : "Photo import: QR codes were found but none were valid otpauth"
     },
-    "Not synced with Apple Watch yet" : {
-      "comment" : "Footer status: never synced"
-    },
     "Nothing to import" : {
       "comment" : "Import summary: all zero counts"
     },
@@ -185,6 +206,9 @@
     },
     "Only SHA1 TOTP accounts are supported for now" : {
       "comment" : "Import error: algorithm parameter is not SHA1"
+    },
+    "Privacy Policy" : {
+
     },
     "Push the current account list to your paired Apple Watch — useful if the watch is missing recent changes" : {
 
@@ -252,7 +276,13 @@
     "Source Code" : {
 
     },
+    "Status" : {
+
+    },
     "Storage" : {
+
+    },
+    "Support" : {
 
     },
     "Sync payload too large (%lld accounts)" : {
@@ -260,9 +290,6 @@
     },
     "Sync to Apple Watch" : {
 
-    },
-    "Synced with Apple Watch %@" : {
-      "comment" : "Footer status: shows when sync last queued, e.g. 'Synced with Apple Watch just now' or 'Synced with Apple Watch 5m ago'"
     },
     "The TOTP code on Apple Watch will stop working" : {
 
@@ -286,7 +313,7 @@
 
     },
     "Watch app not installed" : {
-      "comment" : "Footer status: paired Watch but app not installed"
+      "comment" : "Footer status: paired Watch but app not installed\nSettings: paired Watch but app not installed"
     }
   },
   "version" : "1.0"

@@ -57,6 +57,12 @@
     "Apple Watch" : {
 
     },
+    "Apple Watch not available" : {
+      "comment" : "Footer status: WatchConnectivity unsupported on this device"
+    },
+    "Apple Watch sync failed" : {
+      "comment" : "Footer status: any failure"
+    },
     "AuthBand" : {
 
     },
@@ -168,7 +174,7 @@
     "No TOTP authenticator codes found in the selected images" : {
       "comment" : "Photo import: QR codes were found but none were valid otpauth"
     },
-    "Not synced yet" : {
+    "Not synced with Apple Watch yet" : {
       "comment" : "Footer status: never synced"
     },
     "Nothing to import" : {
@@ -249,17 +255,14 @@
     "Storage" : {
 
     },
-    "Sync failed" : {
-      "comment" : "Footer status: any failure"
-    },
     "Sync payload too large (%lld accounts)" : {
       "comment" : "Sync error: too many accounts in single payload"
     },
     "Sync to Apple Watch" : {
 
     },
-    "Synced %@" : {
-      "comment" : "Footer status: shows when sync last queued, e.g. 'Synced just now' or 'Synced 5m ago'"
+    "Synced with Apple Watch %@" : {
+      "comment" : "Footer status: shows when sync last queued, e.g. 'Synced with Apple Watch just now' or 'Synced with Apple Watch 5m ago'"
     },
     "The TOTP code on Apple Watch will stop working" : {
 
@@ -284,9 +287,6 @@
     },
     "Watch app not installed" : {
       "comment" : "Footer status: paired Watch but app not installed"
-    },
-    "Watch not available" : {
-      "comment" : "Footer status: WatchConnectivity unsupported on this device"
     }
   },
   "version" : "1.0"

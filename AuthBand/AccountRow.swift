@@ -9,6 +9,8 @@ struct AccountRow: View {
     let onEdit: () -> Void
     let onDelete: () -> Void
 
+    @State private var isScreenCaptured = UIScreen.main.isCaptured
+
     private let generator = TOTPGenerator()
 
     var body: some View {
@@ -51,13 +53,23 @@ struct AccountRow: View {
                 Label("Delete", systemImage: "trash")
             }
         }
+        .onReceive(NotificationCenter.default.publisher(for: UIScreen.capturedDidChangeNotification)) { _ in
+            isScreenCaptured = UIScreen.main.isCaptured
+        }
     }
 
     @ViewBuilder
     private func codeView(for code: String, digits: Int) -> some View {
         let codeFont = Font.system(.title, design: .monospaced).weight(.semibold)
 
-        if digits == 6, code.count == 6 {
+        if isScreenCaptured {
+            Text(Self.maskedCode(digits: digits))
+                .font(codeFont)
+                .foregroundStyle(.secondary)
+                .lineLimit(1)
+                .minimumScaleFactor(0.7)
+                .accessibilityLabel(Text("Code hidden while the screen is being recorded"))
+        } else if digits == 6, code.count == 6 {
             let splitIndex = code.index(code.startIndex, offsetBy: 3)
             HStack(spacing: 6) {
                 Text(String(code[..<splitIndex]))
@@ -73,6 +85,13 @@ struct AccountRow: View {
                 .lineLimit(1)
                 .minimumScaleFactor(0.7)
         }
+    }
+
+    private static func maskedCode(digits: Int) -> String {
+        guard digits == 6 else {
+            return String(repeating: "•", count: digits)
+        }
+        return "••• •••"
     }
 
     private func copy(_ code: String) {

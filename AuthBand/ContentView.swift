@@ -172,7 +172,7 @@ struct ContentView: View {
                         }
                     }
                 } footer: {
-                    footerView(now: timeline.date)
+                    footerView
                 }
             }
             .listStyle(.insetGrouped)
@@ -199,41 +199,41 @@ struct ContentView: View {
     }
 
     @ViewBuilder
-    private func footerView(now: Date) -> some View {
-        let text = footerText(now: now)
+    private var footerView: some View {
+        let count = store.accounts.count
+        let issue = footerIssueText
+        let countText = String(
+            localized: "\(count) accounts",
+            comment: "Footer: how many accounts are saved; configure plural variants on `count`"
+        )
 
-        if case .failed = store.syncStatus {
-            HStack(alignment: .center, spacing: 8) {
-                Text(text)
-                Spacer(minLength: 8)
-                Button("Retry") {
-                    store.sendAccountsToWatch()
+        if let issue {
+            let combined = String(
+                localized: "\(countText) • \(issue)",
+                comment: "Footer combining account count and a sync issue"
+            )
+
+            if case .failed = store.syncStatus {
+                HStack(alignment: .center, spacing: 8) {
+                    Text(combined)
+                    Spacer(minLength: 8)
+                    Button("Retry") {
+                        store.sendAccountsToWatch()
+                    }
+                    .buttonStyle(.borderless)
                 }
-                .buttonStyle(.borderless)
+            } else {
+                Text(combined)
             }
         } else {
-            Text(text)
+            Text(countText)
         }
     }
 
-    private func footerText(now: Date) -> String {
-        let sync = syncStatusText(now: now)
-        let count = store.accounts.count
-
-        guard count > 0 else {
-            return sync
-        }
-
-        return String(
-            localized: "\(count) accounts • \(sync)",
-            comment: "Footer combining account count and sync status; configure plural variants on `count`"
-        )
-    }
-
-    private func syncStatusText(now: Date) -> String {
+    private var footerIssueText: String? {
         switch store.syncStatus {
         case .failed:
-            return String(localized: "Apple Watch sync failed", comment: "Footer status: any failure")
+            return String(localized: "Apple Watch sync failed", comment: "Footer status: any sync failure")
         case .watchAppNotInstalled:
             return String(localized: "Watch app not installed", comment: "Footer status: paired Watch but app not installed")
         case .watchNotPaired:
@@ -241,24 +241,8 @@ struct ContentView: View {
         case .watchUnavailable:
             return String(localized: "Apple Watch not available", comment: "Footer status: WatchConnectivity unsupported on this device")
         case .unknown, .ready, .queued:
-            if let last = store.lastSyncedAt {
-                return String(
-                    localized: "Synced with Apple Watch \(Self.relativeTime(for: last, now: now))",
-                    comment: "Footer status: shows when sync last queued, e.g. 'Synced with Apple Watch just now' or 'Synced with Apple Watch 5m ago'"
-                )
-            }
-            return String(localized: "Not synced with Apple Watch yet", comment: "Footer status: never synced")
+            return nil
         }
-    }
-
-    private static let relativeFormatter: RelativeDateTimeFormatter = {
-        let formatter = RelativeDateTimeFormatter()
-        formatter.unitsStyle = .abbreviated
-        return formatter
-    }()
-
-    private static func relativeTime(for date: Date, now: Date) -> String {
-        Self.relativeFormatter.localizedString(for: date, relativeTo: now)
     }
 
     private func showToast(_ message: String) {

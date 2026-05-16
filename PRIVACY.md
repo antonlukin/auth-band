@@ -61,7 +61,7 @@ AuthBand is open source. The full source code is published at https://github.com
 
 ## Changes to this policy
 
-If this policy changes in a meaningful way, the change will be reflected in the file at https://github.com/antonlukin/auth-band/blob/main/PRIVACY.md and the **Effective date** above will be updated. Older versions remain in the git history.
+If this policy changes in a meaningful way, the change will be reflected at https://lukin.me/auth-band/#privacy and the **Effective date** above will be updated. Older versions remain in the git history of the source repository.
 
 ## Contact
 

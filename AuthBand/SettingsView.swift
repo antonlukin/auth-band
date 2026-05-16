@@ -162,7 +162,7 @@ struct SettingsView: View {
     }
 
     private static let sourceURL = URL(string: "https://github.com/antonlukin/auth-band")!
-    private static let privacyURL = URL(string: "https://github.com/antonlukin/auth-band/blob/main/PRIVACY.md")!
+    private static let privacyURL = URL(string: "https://lukin.me/auth-band/#privacy")!
     private static let supportURL = URL(string: "https://github.com/antonlukin/auth-band/issues")!
 
     private static var appVersion: String {

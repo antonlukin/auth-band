@@ -89,7 +89,7 @@ final class AppLockManager: ObservableObject {
 
         guard context.canEvaluatePolicy(.deviceOwnerAuthentication, error: &policyError) else {
             lastError = (policyError as? LAError).map { AppLockManager.message(for: $0) }
-                ?? "Set a device passcode to use AuthBand — accounts stay locked until then"
+                ?? String(localized: "Set a device passcode to use AuthBand — accounts stay locked until then", comment: "Shown on lock screen when device has no passcode at all")
             return
         }
 
@@ -134,17 +134,17 @@ final class AppLockManager: ObservableObject {
     private static func message(for error: LAError) -> String {
         switch error.code {
         case .userCancel, .appCancel, .systemCancel:
-            return "Authentication cancelled"
+            return String(localized: "Authentication cancelled", comment: "Lock screen: user dismissed Face ID prompt")
         case .userFallback:
-            return "Use Face ID, Touch ID, or your passcode to unlock"
+            return String(localized: "Use Face ID, Touch ID, or your passcode to unlock", comment: "Lock screen: user tapped fallback in Face ID prompt")
         case .biometryNotAvailable, .biometryNotEnrolled:
-            return "Biometric authentication is not set up on this device"
+            return String(localized: "Biometric authentication is not set up on this device", comment: "Lock screen: no biometrics enrolled")
         case .biometryLockout:
-            return "Biometric authentication is locked — unlock with your passcode"
+            return String(localized: "Biometric authentication is locked — unlock with your passcode", comment: "Lock screen: too many failed biometric attempts")
         case .passcodeNotSet:
-            return "Set a device passcode to enable the lock screen"
+            return String(localized: "Set a device passcode to enable the lock screen", comment: "Lock screen: no passcode on device")
         case .authenticationFailed:
-            return "Authentication failed — try again"
+            return String(localized: "Authentication failed — try again", comment: "Lock screen: wrong face/finger/passcode")
         default:
             return error.localizedDescription
         }

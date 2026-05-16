@@ -213,14 +213,14 @@ struct AddAccountView: View {
         }
 
         guard imagesLoaded > 0 else {
-            scanError = "Could not load the selected images"
+            scanError = String(localized: "Could not load the selected images", comment: "Photo import: no image loaded successfully")
             return
         }
 
         guard !allCodes.isEmpty else {
             scanError = items.count == 1
-                ? "No QR code found in the selected image"
-                : "No QR codes found in the selected images"
+                ? String(localized: "No QR code found in the selected image", comment: "Photo import: single image, no QR")
+                : String(localized: "No QR codes found in the selected images", comment: "Photo import: multiple images, no QR")
             return
         }
 
@@ -241,7 +241,7 @@ struct AddAccountView: View {
 
         guard !accounts.isEmpty else {
             scanError = lastError?.localizedDescription
-                ?? "No TOTP authenticator codes found in the selected images"
+                ?? String(localized: "No TOTP authenticator codes found in the selected images", comment: "Photo import: QR codes were found but none were valid otpauth")
             return
         }
 

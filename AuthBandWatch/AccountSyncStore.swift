@@ -84,7 +84,11 @@ final class AccountSyncStore: NSObject, ObservableObject {
                 replyHandler: nil,
                 errorHandler: { [weak self] error in
                     Task { @MainActor in
-                        self?.syncStatus = .failed("Live sync failed: \(error.localizedDescription)")
+                        let message = String(
+                            localized: "Live sync failed: \(error.localizedDescription)",
+                            comment: "Shown when WatchConnectivity sendMessage errors out"
+                        )
+                        self?.syncStatus = .failed(message)
                     }
                 }
             )
@@ -254,17 +258,17 @@ final class AccountSyncStore: NSObject, ObservableObject {
         do {
             envelope = try decoder.decode(SyncEnvelope.self, from: payload)
         } catch {
-            syncStatus = .failed("Received invalid accounts")
+            syncStatus = .failed(String(localized: "Received invalid accounts", comment: "Sync error: payload could not be decoded"))
             return
         }
 
         guard envelope.version == SyncEnvelope.currentVersion else {
-            syncStatus = .failed("Unsupported sync version \(envelope.version)")
+            syncStatus = .failed(String(localized: "Unsupported sync version \(envelope.version)", comment: "Sync error: envelope version higher than this build supports"))
             return
         }
 
         guard envelope.accounts.count <= SyncEnvelope.maxAccounts else {
-            syncStatus = .failed("Sync payload too large (\(envelope.accounts.count) accounts)")
+            syncStatus = .failed(String(localized: "Sync payload too large (\(envelope.accounts.count) accounts)", comment: "Sync error: too many accounts in single payload"))
             return
         }
 
@@ -303,7 +307,7 @@ final class AccountSyncStore: NSObject, ObservableObject {
         }
 
         if !KeychainAccountStorage.save(payload) {
-            syncStatus = .failed("Local secure storage failed")
+            syncStatus = .failed(String(localized: "Local secure storage failed", comment: "Sync error: Keychain write returned an error"))
         }
     }
 
@@ -331,7 +335,7 @@ extension AccountSyncStore: WCSessionDelegate {
     ) {
         Task { @MainActor in
             if let error {
-                self.syncStatus = .failed("Activation failed: \(error.localizedDescription)")
+                self.syncStatus = .failed(String(localized: "Activation failed: \(error.localizedDescription)", comment: "Sync error: WCSession activation returned an error"))
                 return
             }
 

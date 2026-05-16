@@ -161,7 +161,7 @@ struct ContentView: View {
                             AccountRow(
                                 account: account,
                                 date: timeline.date,
-                                onCopied: { showToast("Code copied") },
+                                onCopied: { showToast(String(localized: "Code copied", comment: "Toast shown after tapping a row to copy its TOTP code")) },
                                 onEdit: { accountToEdit = account },
                                 onDelete: {
                                     accountToDelete = account
@@ -224,40 +224,54 @@ struct ContentView: View {
             return sync
         }
 
-        let countText = count == 1 ? "1 account" : "\(count) accounts"
-        return "\(countText) • \(sync)"
+        return String(
+            localized: "\(count) accounts • \(sync)",
+            comment: "Footer combining account count and sync status; configure plural variants on `count`"
+        )
     }
 
     private func syncStatusText(now: Date) -> String {
         switch store.syncStatus {
         case .failed:
-            return "Sync failed"
+            return String(localized: "Sync failed", comment: "Footer status: any failure")
         case .watchAppNotInstalled:
-            return "Watch app not installed"
+            return String(localized: "Watch app not installed", comment: "Footer status: paired Watch but app not installed")
         case .watchNotPaired:
-            return "No paired Apple Watch"
+            return String(localized: "No paired Apple Watch", comment: "Footer status: no Apple Watch paired with this iPhone")
         case .watchUnavailable:
-            return "Watch not available"
+            return String(localized: "Watch not available", comment: "Footer status: WatchConnectivity unsupported on this device")
         case .unknown, .ready, .queued:
             if let last = store.lastSyncedAt {
-                return "Synced \(Self.relativeTime(for: last, now: now))"
+                return String(
+                    localized: "Synced \(Self.relativeTime(for: last, now: now))",
+                    comment: "Footer status: shows when sync last queued, e.g. 'Synced just now' or 'Synced 5m ago'"
+                )
             }
-            return "Not synced yet"
+            return String(localized: "Not synced yet", comment: "Footer status: never synced")
         }
     }
 
     private static func relativeTime(for date: Date, now: Date) -> String {
         let seconds = max(now.timeIntervalSince(date), 0)
         if seconds < 60 {
-            return "just now"
+            return String(localized: "just now", comment: "Relative time: under a minute ago")
         }
         if seconds < 3600 {
-            return "\(Int(seconds / 60))m ago"
+            return String(
+                localized: "\(Int(seconds / 60))m ago",
+                comment: "Relative time, abbreviated minutes"
+            )
         }
         if seconds < 86400 {
-            return "\(Int(seconds / 3600))h ago"
+            return String(
+                localized: "\(Int(seconds / 3600))h ago",
+                comment: "Relative time, abbreviated hours"
+            )
         }
-        return "\(Int(seconds / 86400))d ago"
+        return String(
+            localized: "\(Int(seconds / 86400))d ago",
+            comment: "Relative time, abbreviated days"
+        )
     }
 
     private func showToast(_ message: String) {
@@ -290,28 +304,34 @@ struct ContentView: View {
         let invalid = summary.skippedInvalid
 
         if added == 0 && dupes == 0 && invalid == 0 {
-            return "Nothing to import"
+            return String(localized: "Nothing to import", comment: "Import summary: all zero counts")
         }
 
         if added == 0 && invalid == 0 {
-            return dupes == 1
-                ? "This account is already saved"
-                : "All \(dupes) accounts are already saved"
+            return String(
+                localized: "All \(dupes) accounts are already saved",
+                comment: "Import summary: only duplicates were found; configure plural on `dupes`"
+            )
         }
 
         var parts: [String] = []
-        parts.append(added == 1 ? "Added 1 new account" : "Added \(added) new accounts")
+        parts.append(String(
+            localized: "Added \(added) new accounts",
+            comment: "Import summary: number of new accounts added; configure plural on `added`"
+        ))
 
-        if dupes == 1 {
-            parts.append("1 was already saved")
-        } else if dupes > 1 {
-            parts.append("\(dupes) were already saved")
+        if dupes > 0 {
+            parts.append(String(
+                localized: "\(dupes) were already saved",
+                comment: "Import summary: number of duplicates skipped; configure plural on `dupes`"
+            ))
         }
 
-        if invalid == 1 {
-            parts.append("1 couldn't be imported")
-        } else if invalid > 1 {
-            parts.append("\(invalid) couldn't be imported")
+        if invalid > 0 {
+            parts.append(String(
+                localized: "\(invalid) couldn't be imported",
+                comment: "Import summary: number of invalid entries skipped; configure plural on `invalid`"
+            ))
         }
 
         return parts.joined(separator: " — ")

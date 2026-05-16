@@ -248,25 +248,25 @@ enum OTPImportError: LocalizedError {
     var errorDescription: String? {
         switch self {
         case .invalidURL:
-            return "QR code is not a TOTP authenticator URL"
+            return String(localized: "QR code is not a TOTP authenticator URL", comment: "Import error: wrong URL scheme or host")
         case .missingSecret:
-            return "QR code does not contain a secret key"
+            return String(localized: "QR code does not contain a secret key", comment: "Import error: no `secret` query param")
         case .invalidSecret:
-            return "QR code contains an invalid Base32 secret"
+            return String(localized: "QR code contains an invalid Base32 secret", comment: "Import error: secret is not valid Base32")
         case .missingIssuer:
-            return "QR code does not contain an account issuer"
+            return String(localized: "QR code does not contain an account issuer", comment: "Import error: no issuer in URL")
         case .unsupportedAlgorithm:
-            return "Only SHA1 TOTP accounts are supported for now"
+            return String(localized: "Only SHA1 TOTP accounts are supported for now", comment: "Import error: algorithm parameter is not SHA1")
         case .invalidDigits:
-            return "QR code requests an unsupported code length (only 6, 7, or 8 digits are allowed)"
+            return String(localized: "QR code requests an unsupported code length (only 6, 7, or 8 digits are allowed)", comment: "Import error: digits param out of allowed range")
         case .invalidPeriod:
-            return "QR code requests an unsupported refresh interval (15–300 seconds are allowed)"
+            return String(localized: "QR code requests an unsupported refresh interval (15–300 seconds are allowed)", comment: "Import error: period param out of allowed range")
         case .missingMigrationData:
-            return "Google Authenticator QR code does not contain migration data"
+            return String(localized: "Google Authenticator QR code does not contain migration data", comment: "Import error: otpauth-migration URL missing data param")
         case .invalidMigrationData:
-            return "Google Authenticator migration data could not be decoded"
+            return String(localized: "Google Authenticator migration data could not be decoded", comment: "Import error: protobuf payload malformed")
         case .noSupportedAccounts:
-            return "No supported TOTP/SHA1 accounts were found in this QR code"
+            return String(localized: "No supported TOTP/SHA1 accounts were found in this QR code", comment: "Import error: all accounts in migration QR were filtered out")
         }
     }
 }

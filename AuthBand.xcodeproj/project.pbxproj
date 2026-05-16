@@ -29,7 +29,9 @@
 		2B2B2B2B2B2B2B2B2B2B2B0E /* AddAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2B2B2B2B2B2B2B2B2B2B1A /* AddAccountView.swift */; };
 		2B2B2B2B2B2B2B2B2B2B2B0F /* QRImageDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2B2B2B2B2B2B2B2B2B2B1B /* QRImageDecoder.swift */; };
 		2B2B2B2B2B2B2B2B2B2B2B20 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B2B2B2B2B2B2B2B2B2B2B1C /* Assets.xcassets */; };
+		2B2B2B2B2B2B2B2B2B2B2B22 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 2B2B2B2B2B2B2B2B2B2B2B1D /* Localizable.xcstrings */; };
 		1A1A1A1A1A1A1A1A1A1A1A07 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A1A1A1A1A1A1A1A1A1A1A17 /* Assets.xcassets */; };
+		1A1A1A1A1A1A1A1A1A1A1A08 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 1A1A1A1A1A1A1A1A1A1A1A18 /* Localizable.xcstrings */; };
 		3C3C3C3C3C3C3C3C3C3C3C01 /* TOTPGeneratorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3C3C3C3C3C3C3C3C3C3C11 /* TOTPGeneratorTests.swift */; };
 		3C3C3C3C3C3C3C3C3C3C3C02 /* OTPAuthURLParserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3C3C3C3C3C3C3C3C3C3C12 /* OTPAuthURLParserTests.swift */; };
 		3C3C3C3C3C3C3C3C3C3C3C03 /* ProtobufReaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3C3C3C3C3C3C3C3C3C3C13 /* ProtobufReaderTests.swift */; };
@@ -89,7 +91,9 @@
 		2B2B2B2B2B2B2B2B2B2B2B1A /* AddAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountView.swift; sourceTree = "<group>"; };
 		2B2B2B2B2B2B2B2B2B2B2B1B /* QRImageDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRImageDecoder.swift; sourceTree = "<group>"; };
 		2B2B2B2B2B2B2B2B2B2B2B1C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2B2B2B2B2B2B2B2B2B2B2B1D /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		1A1A1A1A1A1A1A1A1A1A1A17 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1A1A1A1A1A1A1A1A1A1A1A18 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		3C3C3C3C3C3C3C3C3C3C3C10 /* AuthBandTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AuthBandTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C3C3C3C3C3C3C3C3C3C3C11 /* TOTPGeneratorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TOTPGeneratorTests.swift; sourceTree = "<group>"; };
 		3C3C3C3C3C3C3C3C3C3C3C12 /* OTPAuthURLParserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPAuthURLParserTests.swift; sourceTree = "<group>"; };
@@ -143,6 +147,7 @@
 				1A1A1A1A1A1A1A1A1A1A1A14 /* TOTPGenerator.swift */,
 				1A1A1A1A1A1A1A1A1A1A1A16 /* AccountSyncStore.swift */,
 				1A1A1A1A1A1A1A1A1A1A1A17 /* Assets.xcassets */,
+				1A1A1A1A1A1A1A1A1A1A1A18 /* Localizable.xcstrings */,
 			);
 			path = AuthBandWatch;
 			sourceTree = "<group>";
@@ -184,6 +189,7 @@
 				2B2B2B2B2B2B2B2B2B2B2B1A /* AddAccountView.swift */,
 				2B2B2B2B2B2B2B2B2B2B2B1B /* QRImageDecoder.swift */,
 				2B2B2B2B2B2B2B2B2B2B2B1C /* Assets.xcassets */,
+				2B2B2B2B2B2B2B2B2B2B2B1D /* Localizable.xcstrings */,
 			);
 			path = AuthBand;
 			sourceTree = "<group>";
@@ -294,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A1A1A1A1A1A1A1A1A1A1A07 /* Assets.xcassets in Resources */,
+				1A1A1A1A1A1A1A1A1A1A1A08 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +309,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B2B2B2B2B2B2B2B2B2B2B20 /* Assets.xcassets in Resources */,
+				2B2B2B2B2B2B2B2B2B2B2B22 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,7 +1,30 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "Activation failed: %@" : {
+      "comment" : "Sync error: WCSession activation returned an error"
+    },
+    "Add accounts on your iPhone" : {
 
+    },
+    "AuthBand" : {
+
+    },
+    "Local secure storage failed" : {
+      "comment" : "Sync error: Keychain write returned an error"
+    },
+    "No codes yet" : {
+
+    },
+    "Received invalid accounts" : {
+      "comment" : "Sync error: payload could not be decoded"
+    },
+    "Sync payload too large (%lld accounts)" : {
+      "comment" : "Sync error: too many accounts in single payload"
+    },
+    "Unsupported sync version %lld" : {
+      "comment" : "Sync error: envelope version higher than this build supports"
+    }
   },
   "version" : "1.0"
 }

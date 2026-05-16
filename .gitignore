@@ -8,3 +8,6 @@ build/
 # Xcode user state
 xcuserdata/
 *.xcuserstate
+
+# Claude Code session files
+.claude/

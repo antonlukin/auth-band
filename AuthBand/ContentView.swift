@@ -233,21 +233,21 @@ struct ContentView: View {
     private func syncStatusText(now: Date) -> String {
         switch store.syncStatus {
         case .failed:
-            return String(localized: "Sync failed", comment: "Footer status: any failure")
+            return String(localized: "Apple Watch sync failed", comment: "Footer status: any failure")
         case .watchAppNotInstalled:
             return String(localized: "Watch app not installed", comment: "Footer status: paired Watch but app not installed")
         case .watchNotPaired:
             return String(localized: "No paired Apple Watch", comment: "Footer status: no Apple Watch paired with this iPhone")
         case .watchUnavailable:
-            return String(localized: "Watch not available", comment: "Footer status: WatchConnectivity unsupported on this device")
+            return String(localized: "Apple Watch not available", comment: "Footer status: WatchConnectivity unsupported on this device")
         case .unknown, .ready, .queued:
             if let last = store.lastSyncedAt {
                 return String(
-                    localized: "Synced \(Self.relativeTime(for: last, now: now))",
-                    comment: "Footer status: shows when sync last queued, e.g. 'Synced just now' or 'Synced 5m ago'"
+                    localized: "Synced with Apple Watch \(Self.relativeTime(for: last, now: now))",
+                    comment: "Footer status: shows when sync last queued, e.g. 'Synced with Apple Watch just now' or 'Synced with Apple Watch 5m ago'"
                 )
             }
-            return String(localized: "Not synced yet", comment: "Footer status: never synced")
+            return String(localized: "Not synced with Apple Watch yet", comment: "Footer status: never synced")
         }
     }
 

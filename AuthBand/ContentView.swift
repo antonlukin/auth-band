@@ -251,27 +251,14 @@ struct ContentView: View {
         }
     }
 
+    private static let relativeFormatter: RelativeDateTimeFormatter = {
+        let formatter = RelativeDateTimeFormatter()
+        formatter.unitsStyle = .abbreviated
+        return formatter
+    }()
+
     private static func relativeTime(for date: Date, now: Date) -> String {
-        let seconds = max(now.timeIntervalSince(date), 0)
-        if seconds < 60 {
-            return String(localized: "just now", comment: "Relative time: under a minute ago")
-        }
-        if seconds < 3600 {
-            return String(
-                localized: "\(Int(seconds / 60))m ago",
-                comment: "Relative time, abbreviated minutes"
-            )
-        }
-        if seconds < 86400 {
-            return String(
-                localized: "\(Int(seconds / 3600))h ago",
-                comment: "Relative time, abbreviated hours"
-            )
-        }
-        return String(
-            localized: "\(Int(seconds / 86400))d ago",
-            comment: "Relative time, abbreviated days"
-        )
+        Self.relativeFormatter.localizedString(for: date, relativeTo: now)
     }
 
     private func showToast(_ message: String) {
